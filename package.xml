@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<package xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" packagerversion="1.4.1" version="2.0" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0 http://pear.php.net/dtd/tasks-1.0.xsd http://pear.php.net/dtd/package-2.0 http://pear.php.net/dtd/package-2.0.xsd">
+ <name>teUrlToAssetPlugin</name>
+ <channel>pear.symfony-project.com</channel>
+ <summary>The teUrlToAssetPlugin allows convenient access to "page-specific" assets (images, flash files, documents, etc.) by mapping a URL to a directory structure and via simple hierarchy finding the most applicable asset, if any.</summary>
+ <description>Most useful for CMS setups where user needs granular control over which assets appear where on the site, without cluttering up the user-interface to upload assets for each page.</description>
+ <lead>
+  <name>Daniel Richter</name>
+  <user>Richtermeister</user>
+  <email>danny@codemassacre.com</email>
+  <active>yes</active>
+ </lead>
+ <date>2009-08-25</date>
+ <version>
+   <release>1.0.0</release>
+   <api>1.0.0</api>
+ </version>
+ <stability>
+  <release>stable</release>
+  <api>stable</api>
+ </stability>
+<license uri="http://www.symfony-project.com/license">MIT</license>
+ <notes>-</notes>
+ <contents><dir name="/"><file name="README" role="data"/><file name="LICENSE" role="data"/><dir name="lib"><file name="teUrlToAssetMapper.class.php" role="data"/></dir><dir name="config"><file name="config.php" role="data"/></dir></dir></contents>
+
+ <dependencies>
+  <required>
+   <php>
+    <min>5.1.0</min>
+   </php>
+   <pearinstaller>
+    <min>1.4.1</min>
+   </pearinstaller>
+   <package>
+    <name>symfony</name>
+    <channel>pear.symfony-project.com</channel>
+    <min>1.1.0</min>
+    <max>1.3.0</max>
+    <exclude>1.3.0</exclude>
+   </package>
+  </required>
+ </dependencies>
+
+ <phprelease>
+ </phprelease>
+
+ <changelog>
+ </changelog>
+</package>

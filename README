@@ -1,0 +1,79 @@
+teUrlToAsset plugin
+==============
+
+The `teUrlToAssetPlugin` is a symfony plugin that allows convenient access to
+"page-specific" assets (images, flash files, documents, etc.) by mapping a
+URL to a directory structure and via simple hierarchy finding the most
+applicable asset, if any.
+
+Most useful for CMS setups where user needs granular control over which assets
+appear where on the site, without cluttering up the user-interface to
+upload assets for each page.
+
+Installation
+------------
+
+  * Install the plugin
+
+        $ symfony plugin:install teUrlToAssetPlugin
+
+  * You're done.
+
+Usage
+-----
+
+The plugin class can be used stand-alone, but installed in a symfony project
+it will make a new variable "$assets" available in all your templates.
+
+$assets implements the ArrayAccess interface, and it's aware of the current
+uri of the page it's on. For example, to find a banner on a page with the uri:
+
+    www.your-site.com/sports/outdoor/hiking
+
+you simple write:
+
+    [php]
+    $image = $asset["banner"];
+
+By default this will look for one of the following files (in this order):
+
+    /uploads/banner/sports/outdoor/hiking.jpg
+    /uploads/banner/sports/outdoor.jpg
+    /uploads/banner/sports.jpg
+    /uploads/banner.jpg
+
+The first file that is found is returned. If no file matches, null is returned.
+
+What this enables you to do is specify a banner image for the entire section
+"sports", yet override this banner specifically for the section "outdoor".. etc.
+As you can see you can even have a default "banner.jpg" to fall back on.
+
+By default the plugin looks for JPG files, but you can specify the file type
+like so:
+
+    [php]
+    $flash = $assets["banner.swf"]
+    $document = $assets["manual.pdf"]
+    $audio = $assets["music.mp3"]
+
+This way, you can distribute general and specific assets throughout your site
+via the usual upload functionality of your favorite wysiwyg editor,
+for example, or an asset manager.
+
+Configuration
+-------------
+
+The plugin can be customized via the following settings:
+
+    [yml]
+    #app.yml
+    all:
+      teUrlToAssetPlugin:
+        dir: uploads
+        template_name: assets
+
+Hope this makes your asset life easier.
+
+For questions / suggestions feel free to send an email.
+
+Have a great day.
