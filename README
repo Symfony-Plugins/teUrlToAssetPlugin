@@ -33,7 +33,7 @@ uri of the page it's on. For example, to find a banner on a page with the uri:
 you simple write:
 
     [php]
-    $image = $asset["banner"];
+    $image = $assets["banner"];
 
 By default this will look for one of the following files (in this order):
 
