@@ -57,7 +57,7 @@ class teUrlToAssetMapper implements ArrayAccess
           $path = $this -> basedir.$url;
           if(file_exists($path))
           {
-            $this -> cache[$type][$name] = $url;
+            $this -> cache[$type][$name] = str_replace(DIRECTORY_SEPARATOR, "/", $url);
             break;
           }
         }
